@@ -18,28 +18,28 @@ public class HomeController {
     }
 
     @GetMapping("/employees")
-    public List<Employee> getAllStudents(){
+    public List<Employee> getAllEmployees(){
         return employeeService.findAll();
     }
 
     @GetMapping("/employees/{id}")
-    public Employee getStudentById(@PathVariable("id") Long id){
+    public Employee getEmployeeById(@PathVariable("id") Long id){
         return employeeService.getEmployeeById(id);
     }
 
     @PostMapping("/employees")
-    public String saveStudent(@RequestBody Employee employee){
+    public String saveEmployee(@RequestBody Employee employee){
         employeeService.createEmployee(employee);
         return "add thanh cong";
     }
 
     @PutMapping("/employees/{id}")
-    public Employee updateStudent(@PathVariable("id") Long id,@RequestBody Employee employee){
+    public Employee updateEmployee(@PathVariable("id") Long id,@RequestBody Employee employee){
         return employeeService.updateById(id,employee);
     }
 
     @DeleteMapping("/employees/{id}")
-    public String deleteStudent(@PathVariable("id") Long id){
+    public String deleteEmployee(@PathVariable("id") Long id){
         employeeService.deleteById(id);
         return "delete thanh cong";
     }
